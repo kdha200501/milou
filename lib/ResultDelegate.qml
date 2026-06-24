@@ -32,7 +32,7 @@ PlasmaComponents3.ItemDelegate {
     property int activeAction: -1
 
     property string typeText: sectionHasChanged ? ListView.section : ""
-    property int categoryWidth: Kirigami.Units.gridUnit * 10
+    property int categoryWidth: Kirigami.Units.gridUnit * 5
 
     required property int index
     required property var model
@@ -146,8 +146,11 @@ PlasmaComponents3.ItemDelegate {
             }
             width: resultDelegate.categoryWidth - Kirigami.Units.largeSpacing
             opacity: 0.75
+            font.pixelSize: 18
             color: resultDelegate.down ? Kirigami.Theme.highlightedTextColor : Kirigami.Theme.textColor
             elide: Text.ElideRight
+            wrapMode: Text.WordWrap
+            maximumLineCount: 2
             text: resultDelegate.typeText
             textFormat: Text.PlainText
             horizontalAlignment: Text.AlignRight
